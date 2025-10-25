@@ -1,4 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# F1 2025 Telemetry Frontend
+
+Next.js, TailwindCSS, and Mantineを使用したF1 2025テレメトリーダッシュボードのフロントエンド。
+
+## 機能
+
+- **ライブダッシュボード**: リアルタイムでドライバーのテレメトリーデータを表示
+  - スピード、ギア、RPM
+  - タイヤとブレーキの温度
+  - ERS充電とDRS使用可能状態
+  - 燃料残量とミックス設定
+  
+- **リーダーボード**: 全ドライバーの順位と統計を表示
+
+- **ライブトラックマップ**: 
+  - 全ドライバーの位置をリアルタイムで表示
+  - チームカラーでドライバーを識別
+  - イベント通知（ファステストラップ、ペナルティなど）
 
 ## Getting Started
 
@@ -15,6 +32,25 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## API接続
+
+フロントエンドは以下のエンドポイントに接続します：
+
+- `GET /api/session` - セッション情報
+- `GET /api/players` - 全プレイヤーの詳細なテレメトリーデータ
+- `GET /api/telemetry/motion` - プレイヤーの位置データ
+
+デフォルトのAPI URLは `http://localhost:8000` です。
+バックエンドAPIサーバーが起動していることを確認してください。
+
+## 技術スタック
+
+- **Next.js 16** - Reactフレームワーク
+- **Mantine 8** - UIコンポーネントライブラリ
+- **TailwindCSS 4** - ユーティリティファーストCSS
+- **TypeScript** - 型安全性
+- **Tabler Icons** - アイコンライブラリ
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
